@@ -8,7 +8,10 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {},
+    "require": {
+        "laravel/framework": "^7.0",
+        "laravel/ui": "^2.0"
+    },
     "autoload": {
       "psr-4": {
         "Popart\\PopartStart\\": "src/"
