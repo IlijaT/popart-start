@@ -11,7 +11,7 @@
     "require": {},
     "autoload": {
       "psr-4": {
-        "Popart\\PopartStart": "src/"
+        "Popart\\PopartStart\\": "src/"
       }
     },
     "extra": {
