@@ -1,0 +1,22 @@
+{
+    "name": "popart/popart-start",
+    "description": "The default Popart custom CMS \u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[CLaravel CMS preset.",
+    "authors": [
+        {
+            "name": "Ilija Tatalovic",
+            "email": "ilija@popwebdesign.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+      "psr-4": {
+        "Popart\\PopartStart": "src/"
+      }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [ "Popart\\PopartStart\\PopartServiceProvider"]
+        }
+    }
+}

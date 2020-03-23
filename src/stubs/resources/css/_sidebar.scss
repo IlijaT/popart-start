@@ -1,0 +1,51 @@
+.sidebar-menu__link {
+    background: transparent;
+
+    &:hover {
+        & .sidebar-menu__span {
+            opacity: 1;
+        }
+
+        & .sidebar-menu__icon {
+            opacity: 1;
+        }
+    }
+}
+
+.sidebar-menu__span {
+    transition: 0.3s opacity;
+    color: $white;
+    opacity: 0.5;
+}
+
+.sidebar-menu__icon {
+    opacity: 0.5;
+    transition: 0.3s opacity;
+}
+
+.active {
+    & .sidebar-menu__link {
+        background: $blue-light;
+
+        & .sidebar-menu__span {
+            opacity: 1;
+        }
+
+        & .sidebar-menu__icon {
+            opacity: 1;
+        }
+    }
+}
+
+.navbar-custom-menu__name {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 25px;
+    color: #333333;
+
+    @include mq(550) {
+        display: none;
+    }
+}

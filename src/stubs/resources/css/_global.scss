@@ -1,0 +1,705 @@
+body {
+    color: $black;
+    font-family: $main-font;
+}
+
+.sans-40 {
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 100%;
+
+    @include mq(767) {
+        font-size: 30px;
+    }
+}
+
+.sans-20 {
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.sans-16 {
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 25px;
+
+    @include mq(767) {
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+.sans-12 {
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 100%;
+}
+
+.dashboard-top {
+    padding: 100px 0 60px;
+    background: $grey-bg;
+    display: flex;
+    justify-content: space-between;
+
+    @include mq(767) {
+        padding: 77px 10px 40px;
+    }
+
+    @include mq(500) {
+        flex-direction: column;
+        padding: 77px 10px 25px;
+    }
+
+    @include mq(460) {
+        padding-top: 60px;
+    }
+
+    @include mq(650, max, height) {
+        padding-top: 40px;
+    }
+}
+
+.dashboard-top--roles {
+    @include mq(1360) {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+.dashboard-top__left {
+    color: $blue-dark;
+
+    @include mq(500) {
+        margin-bottom: 15px;
+    }
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    background: $white;
+    padding: 30px;
+    border-radius: 8px;
+
+    @include mq(767) {
+        padding: 20px 10px;
+    }
+}
+
+.select-btn {
+    width: 100%;
+    height: 56px;
+    border-radius: 8px;
+    border: 1px solid $blue-dark;
+    color: $black;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:active {
+        outline: none;
+    }
+}
+
+.select-btn-color {
+    width: 100%;
+    height: 56px;
+    border-radius: 8px;
+    border-left: 8px solid $green;
+    border-top: 1px solid $blue-dark;
+    border-bottom: 1px solid $blue-dark;
+    border-right: 1px solid $blue-dark;
+    color: $black;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:active {
+        outline: none;
+    }
+}
+
+.input {
+    width: 100%;
+    height: 56px;
+    border-radius: 8px;
+    border: 1px solid $grey-border;
+    transition: 0.3s;
+    padding: 0 24px;
+    color: $black;
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 100%;
+
+    &::placeholder {
+        color: $grey-text;
+    }
+
+    &:focus {
+        outline: none;
+        border: 1px solid $blue-dark;
+    }
+
+    &:active {
+        outline: none;
+        border: 1px solid $blue-dark;
+    }
+
+    @include mq(767) {
+        height: 47px;
+        font-size: 14px;
+        padding: 0 16px;
+    }
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.box-checkbox-label {
+    width: 20px;
+    height: 20px;
+    border: 1px solid $grey-border;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+
+    & svg {
+        & path {
+            stroke-dasharray: 11.555948257446289;
+            stroke-dashoffset: 11.555948257446289;
+        }
+    }
+}
+
+.box-checkbox {
+    &:checked {
+        &~.box-checkbox-label {
+            border: 1px solid $blue-dark;
+            background: $blue-dark;
+
+            & svg {
+                & path {
+                    animation: checkbox 0.3s forwards;
+                    animation-delay: 0.2s;
+                }
+            }
+        }
+    }
+}
+
+@keyframes checkbox {
+    0% {
+        stroke-dashoffset: 11.555948257446289;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.circle-checkbox-on {
+    transition: 0.3s;
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    top: 2px;
+}
+
+.circle-checkbox-off {
+    transition: 0.3s;
+    position: absolute;
+    right: 0;
+    top: 2px;
+}
+
+.circle-checkbox {
+    &:checked {
+        &~.circle-checkbox-label {
+            background: $green;
+
+            & span {
+                left: 26px;
+            }
+        }
+
+        &~.circle-checkbox-on {
+            opacity: 1;
+        }
+
+        &~.circle-checkbox-off {
+            opacity: 0;
+        }
+    }
+}
+
+.circle-checkbox-label {
+    width: 52px;
+    height: 28px;
+    background: $red;
+    border-radius: 14px;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+
+    & span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        left: 2px;
+        top: 2px;
+        background: $white;
+        border-radius: 50%;
+        transition: 0.3s left;
+    }
+}
+
+.save-btn {
+    width: 155px;
+    height: 43px;
+    border-radius: 8px;
+    background: $green;
+    border: 1px solid $green;
+    color: $white;
+    transition: 0.3s;
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 16px;
+
+    & svg {
+        margin-right: 4px;
+
+        & path {
+            transition: 0.3s;
+        }
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:active {
+        outline: none;
+    }
+
+    &:hover {
+        background: transparent;
+        color: $green;
+
+        & svg {
+            & path {
+                fill: $green;
+            }
+        }
+
+        & .save-btn-fill {
+            fill: $green;
+        }
+
+        & .save-btn-stroke {
+            stroke: $green;
+        }
+
+    }
+
+    @include mq(767) {
+        font-size: 14px;
+    }
+}
+
+.less-btn {
+    color: $black;
+    background: transparent;
+    border: none;
+    position: relative;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:active {
+        outline: none;
+    }
+
+    & svg {
+        position: relative;
+        top: 5px;
+        margin-left: 20px;
+        transition: 0.5s;
+    }
+
+    @include mq(767) {
+        & svg {
+            top: 2px;
+            margin-left: 12px;
+        }
+    }
+}
+
+
+.btn-add-new {
+    background: $blue-light;
+    color: $white;
+    width: 160px;
+    border-radius: 8px;
+    height: 43px;
+    border: none;
+    border: 1px solid $blue-light;
+    transition: 0.3s;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:active {
+        outline: none;
+    }
+
+    & svg {
+        margin-right: 5px;
+        position: relative;
+        top: -1px;
+
+        & path {
+            transition: 0.3s;
+        }
+    }
+
+    &:hover {
+        color: $blue-light;
+        background: transparent;
+
+        & svg {
+            & path {
+                fill: $blue-light;
+            }
+        }
+    }
+
+    @include mq(767) {
+        & svg {
+            top: 0;
+        }
+
+    }
+}
+
+.search-btn {
+    background: $blue-light;
+    color: #fff;
+    width: 160px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    height: 43px;
+    border: none;
+    border: 1px solid $blue-light;
+    transition: 0.3s;
+
+    & svg {
+        & path {
+            transition: 0.3s;
+        }
+    }
+
+    &:hover {
+        background: transparent;
+        color: $blue-light;
+
+        & svg {
+            & path {
+                fill: $blue-light;
+            }
+        }
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:active {
+        outline: none;
+    }
+}
+
+.delete-btn {
+    border: 1px solid $red;
+    border-radius: 8px;
+    background: transparent;
+    color: $red;
+    transition: 0.3s;
+    height: 43px;
+    width: 164px;
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+
+    & svg {
+
+        margin-right: 4px;
+        position: relative;
+        top: 1px;
+
+        & path {
+            transition: 0.3s;
+        }
+    }
+
+    &:hover {
+        color: $white;
+        background: $red;
+
+        & svg {
+            & path {
+                fill: $white;
+            }
+        }
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:active {
+        outline: none;
+    }
+
+    @include mq(767) {
+        font-size: 14px;
+    }
+}
+
+.card-heading {
+    font-family: $main-font;
+    color: $blue-dark;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 20px;
+    margin-bottom: 30px;
+}
+
+
+.add-button {
+    background: $blue-light;
+    color: $white;
+    width: 160px;
+    border-radius: 8px;
+    height: 43px;
+    border: none;
+    border: 1px solid $blue-light;
+    transition: 0.3s;
+    font-family: $main-font;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:active {
+        outline: none;
+    }
+
+    & svg {
+        margin-right: 2px;
+
+        & path {
+            transition: 0.3s;
+        }
+    }
+
+    &:hover {
+        color: $blue-light;
+        background: transparent;
+
+        & svg {
+            & path {
+                fill: $blue-light;
+            }
+        }
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.cancel-btn {
+    border: none;
+    border-bottom: 1px dashed $black;
+    color: $grey-text;
+    background: transparent;
+    transition: 0.3s;
+
+    &:hover {
+        color: $blue-dark;
+        border-bottom: 1px dashed $black;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:active {
+        outline: none;
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2000;
+    display: none;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.blue-dashed-btn {
+    background: transparent;
+    color: $blue-light;
+    border: none;
+    border-bottom: 1px dashed $blue-light;
+    transition: 0.3s;
+    height: 25px;
+
+    &:hover {
+        color: $blue-dark;
+        border-bottom: 1px dashed $blue-dark;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:active {
+        outline: none;
+    }
+}
+
+.blue-dashed-btn--logout {
+    color: $black;
+    border-bottom: 1px dashed $black;
+    padding: 0;
+    position: relative;
+    top: 0;
+    margin-left: 35px;
+
+    &:hover {
+        color: $blue-dark;
+        border-bottom: 1px dashed $blue-dark;
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+
+    & .active {
+        & .page-link {
+            background: $blue-dark;
+            border-color: $blue-dark;
+        }
+
+        &:hover {
+            & .page-link {
+                background: $blue-dark;
+                border-color: $blue-dark;
+            }
+        }
+    }
+
+    & .page-link {
+        background: $white;
+        border-color: $grey-border;
+        transition: 0.3s;
+        color: $black;
+
+        &:hover {
+            background: $blue-dark;
+            border-color: $blue-dark;
+            color: $white;
+        }
+    }
+
+}

@@ -1,0 +1,32 @@
+$blue-dark: #144069;
+$blue-light: #29BAFF;
+$white: #fff;
+$black: #333;
+$grey-bg: #EDF2F8;
+$grey-text: #ACB5BD;
+$grey-border: #D3D4D6;
+$grey-fill: #B5C4D1;
+$green: #02C874;
+$yellow: #f1fa3c;
+$red: #FF505B;
+$purple: purple;
+$orange: orange;
+$olive: #808000;
+$brown: #9A6324;
+$lime: lime;
+$maroon: #800000;
+$pink: #f032e6;
+$aquamarine: aquamarine;
+$teal: #469990;
+$beige: #fffac8;
+$overlay: rgba(0, 0, 0, 0.4);
+
+$main-font: 'Roboto',
+sans-serif;
+;
+
+@mixin mq($value, $constraint: max, $feature: width) {
+    @media screen and (#{$constraint}-#{$feature}: $value + px) {
+        @content;
+    }
+}
