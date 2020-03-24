@@ -59,8 +59,6 @@ class PopartPreset extends Preset
         copy(__DIR__.'/stubs/resources/js/dashboard.js', resource_path('js/dashboard.js'));
         copy(__DIR__.'/stubs/resources/js/bootstrap_3.js', resource_path('js/dashboard/bootstrap_3.js'));
         copy(__DIR__.'/stubs/resources/js/adminlte.js', resource_path('js/dashboard/adminlte.js'));
-
-
     }
 
     protected static function updateStyles()
@@ -84,12 +82,10 @@ class PopartPreset extends Preset
         copy(__DIR__.'/stubs/resources/css/app.scss', resource_path('sass/app.scss'));
 
         copy(__DIR__.'/stubs/resources/css/bootstrap.scss', resource_path('sass/front/bootstrap.scss'));
-
     }
 
     protected static function scaffoldAuth()
     {
-
         if (! is_dir($directory = app_path('Http/Controllers/Dashboard'))) {
             mkdir($directory, 0755, true);
         }
@@ -119,13 +115,7 @@ class PopartPreset extends Preset
                 );
         });
 
-        // if (! is_dir($directory = resource_path('views/auth'))) {
-        //     mkdir($directory, 0755, true);
-        // }
-
         $filesystem->copyDirectory(__DIR__.'/stubs/resources/views/auth', resource_path('views/auth'));
-
-
     }
     
 
@@ -168,10 +158,9 @@ class PopartPreset extends Preset
 
     public static function updateRoutes()
     {
-
         file_put_contents(
             base_path('routes/web.php'),
-            "\n\nAuth::routes();\n\nRoute::get('dashboard/index', 'Dashboard\HomeController@index')->name('dashboard.home');\n\n",
+            "\n\nAuth::routes();\n\nRoute::get('dashboard/index', 'Dashboard\HomeController@index')->name('dashboard.index');\n\n",
             FILE_APPEND
         );
 

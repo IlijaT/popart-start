@@ -10,7 +10,7 @@ class PopartServiceProvider extends ServiceProvider
     
     public function boot()
     {
-        UiCommand::macro('popart:dashboard', function ($command) {
+        UiCommand::macro('popart:start', function ($command) {
 
             PopartPreset::install();
             

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>PopArt</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -83,6 +83,7 @@
                 <div class="title m-b-md">
                     PopArt Studio
                 </div>
+                <a href="{{ route('dashboard.index') }}">Home</a>
             </div>
         </div>
     </body>
